@@ -1,0 +1,51 @@
+/************************************************************************************
+Group Members:  Ali Hooman (alhooman)
+                William Kerr (wkerr)
+                Nathan Lakritz (njlakrit)
+Assignment: PA1
+************************************************************************************/
+
+/************************************************************************************
+Files Submitted:    Makefile
+                    README
+                    riscv_sim_execute_instruction.c
+                    riscv_sim_execute_instruction.h
+                    riscv_sim_framework.c, riscv_sim_framework.h
+************************************************************************************/
+
+/************************************************************************************
+riscv_sim_framework.c:   provided file that runs the simulator and contains memory
+                         read/write and register read/write functions.
+
+riscv_sim_execute_instruction.c:    handles the fetch, decode, execute, memory, and 
+                                    write-back stages for a single instruction.
+************************************************************************************/
+
+/************************************************************************************
+Notes:  Our execute_instruction function supports RISC-V instructions, specifically 
+        the RV32I, RV64I, RV32M, and RV64M extensions.
+
+        We did not support CSR*, FENCE/FENCE.I, EBREAK, ECALL instructions as 
+        requested.
+************************************************************************************/
+
+/************************************************************************************
+Sources:    Class textbook (Computer Organization and Design RISC-V Edition)
+            Various helpful class Piazza posts
+            Knowledge gained directly from Professor Miller and TAs through
+            lecture and section
+            The official RISC-V manual:
+                https://www2.eecs.berkeley.edu/Pubs/TechRpts/2014/EECS-2014-54.pdf
+************************************************************************************/
+
+/************************************************************************************
+Testing:    We've tested the simulator on each instruction extensively.
+            The majority of tests were written by ourselves by hand, while some
+            were obtained through Piazza posts.
+
+            Specifically, we used https://github.com/seijiemery/rv-test and 
+            ALUDRAD's posted test files for some basic testing.
+
+            We've included some sample test files in the 'TestFiles' folder
+            on our repo.
+END*********************************************************************************/

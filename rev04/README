@@ -1,0 +1,103 @@
+//******************************************************************************
+Group 54
+Members: Ali Hooman (alhooman), William Kerr (wkerr), Nathan Lakritz (njlakrit)
+Assignment: PA4
+******************************************************************************//
+//******************************************************************************
+Usage:  Type "make" to compile program
+        Program is compiled into sim binary
+        "./sim" runs the simulator
+******************************************************************************//
+//******************************************************************************
+Files Submitted:    designdoc.pdf 
+                    Makefile
+                    README
+                    global_variables.h
+                    riscv_pipeline_registers.h
+                    riscv_pipeline_registers_vars.h
+                    riscv_sim_framework.c
+                    riscv_sim_framework.h
+                    stage_fetch.c
+                    stage_decode.c
+                    stage_execute.c
+                    stage_memory.c
+                    stage_writeback.c
+                    unit_tests.c
+                    TestFiles (directory)
+******************************************************************************//
+//******************************************************************************
+File Descriptions:
+
+    global_variables.h              Carried over from PA3. Program wide
+                                    variables and structs for our cache and
+                                    TLB are defined in this file.
+
+    riscv_pipeline_registers.h      Provided file that allows for straight
+                                    forward stage register access. We added
+                                    our own fields for each stage register.
+
+    memory_translation.c            Interface for handling memory translations.
+
+    memory_translation.h            Header for memory translation functions.
+
+    riscv_pipeline_registers_vars.h Provided file for stage register
+                                    definitions.
+
+    riscv_sim_framework.c           Instructor supplied framework. This file
+                                    is not modified.
+
+    riscv_sim_framework.h           Header file for framework and student
+                                    implemented functions.
+
+    stage_fetch.c                   Handles the fetch stage for a single 
+                                    instruction. Handles the instruction 
+                                    cache directly.
+
+    stage_decode.c                  Handles the decode stage for a single 
+                                    instruction.
+
+    stage_execute.c                 Handles the execute stage for a single 
+                                    instruction.
+
+    stage_memory.c                  Handles the memory stage for a single
+                                    instruction. Handles the data cache 
+                                    directly.
+
+    stage_writeback.c               Handles the writeback stage for a single 
+                                    instruction.
+
+    tlb_interface.c                 Interface for handling TLB operations.
+    
+    tlb_interface.h                 Header for TLB functions.
+
+    designdoc.pdf                   Our design document.
+
+    Makefile                        Compiles simulator
+
+    unit_tests.c                    Test suite
+
+    TestFiles                       Directory in which we store some of the
+                                    common hex files for testing our sim along
+                                    with the instructor provided page table
+                                    generator script (gen_page_table.py).
+    
+    README                          This file.
+******************************************************************************//
+//******************************************************************************
+Notes:
+    Our code supports RISC-V instructions, specifically the RV32I, RV64I, RV32M, 
+    and RV64M extensions.
+
+    We did not support CSR*, FENCE/FENCE.I, EBREAK, ECALL instructions as 
+    requested. Stalling, forwarding, and branch prediction (Backwards Taken) 
+    are supported.
+
+Sources:
+    - Class textbook (Computer Organization and Design RISC-V Edition)
+    - Various helpful class Piazza posts
+    - Knowledge gained directly from Professor Miller and TAs through lecture 
+      and section
+    - The official RISC-V manual: 
+      https://www2.eecs.berkeley.edu/Pubs/TechRpts/2014/EECS-2014-54.pdf
+END***************************************************************************//
+

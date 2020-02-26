@@ -1,0 +1,91 @@
+//******************************************************************************
+Group 54
+Members: Ali Hooman (alhooman), William Kerr (wkerr), Nathan Lakritz (njlakrit)
+Assignment: PA3
+******************************************************************************//
+//******************************************************************************
+Usage:  Type "make" to compile program
+        Program is compiled into sim binary
+        "./sim" runs the simulator
+******************************************************************************//
+//******************************************************************************
+Files Submitted:    designdoc.pdf 
+                    Makefile
+                    README
+                    global_variables.h
+                    riscv_pipeline_registers.h
+                    riscv_sim_pipeline_framework.h
+                    riscv_sim_pipeline_framework.c
+                    stage_fetch.c
+                    stage_decode.c
+                    stage_execute.c
+                    stage_memory.c
+                    stage_writeback.c
+                    unit_tests.c
+                    TestFiles
+******************************************************************************//
+//******************************************************************************
+File Descriptions:
+
+    riscv_sim_pipeline_framework.c  Provided file that runs the pipelined
+                                    simulator and contains memory read/write, 
+                                    register read/write, and program counter 
+                                    read/write functions. Used as is, unedited.
+
+    riscv_pipeline_registers.h      Provided file that allows for straight
+                                    forward stage register access. We added
+                                    our own fields for each stage register.
+
+    stage_fetch.c                   Handles the fetch stage for a single 
+                                    instruction. Handles the instruction 
+                                    cache directly.
+
+    stage_decode.c                  Handles the decode stage for a single 
+                                    instruction.
+
+    stage_execute.c                 Handles the execute stage for a single 
+                                    instruction.
+
+    stage_memory.c                  Handles the memory stage for a single
+                                    instruction. Handles the data cache 
+                                    directly.
+
+    stage_writeback.c               Handles the writeback stage for a single 
+                                    instruction.
+
+    global_variables.h              Contains an enum for instruction types,
+                                    our cache arrays (I-cache and D-cache),
+                                    structs for each cache array's blocks,
+                                    and the branch target buffer.
+
+    unit_tests.c                    Unit testing for each stage of the pipeline. 
+                                    (not this time) We used manually generated
+                                    hex files for testing.
+
+    designdoc.pdf                   Our design document.
+
+    Makefile                        Compiles simulator
+
+    TestFiles                       Directory in which we store some of the
+                                    common hex files for testing our sim.
+    
+    README                          This file.
+******************************************************************************//
+//******************************************************************************
+Notes:
+    Our code supports RISC-V instructions, specifically the RV32I, RV64I, RV32M, 
+    and RV64M extensions.
+
+    We did not support CSR*, FENCE/FENCE.I, EBREAK, ECALL instructions as 
+    requested. Stalling, forwarding, and branch prediction (Backwards Taken) 
+    are supported.
+
+Sources:
+    - Class textbook (Computer Organization and Design RISC-V Edition)
+    - Various helpful class Piazza posts
+    - Knowledge gained directly from Professor Miller and TAs through lecture 
+      and section
+    - The official RISC-V manual: 
+      https://www2.eecs.berkeley.edu/Pubs/TechRpts/2014/EECS-2014-54.pdf
+END***************************************************************************//
+

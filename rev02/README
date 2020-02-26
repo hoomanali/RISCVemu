@@ -1,0 +1,72 @@
+/***************************************************************************
+Group Members:  Ali Hooman (alhooman)
+                William Kerr (wkerr)
+                Nathan Lakritz (njlakrit)
+Assignment: PA2
+***************************************************************************/
+
+/***************************************************************************
+Files Submitted:    Makefile
+                    README
+                    riscv_pipeline_registers.h
+                    riscv_sim_pipeline_framework.h
+                    riscv_sim_pipeline_framework.c
+                    stage_fetch.h
+                    stage_fetch.c
+                    stage_decode.h
+                    stage_decode.c
+                    stage_execute.h
+                    stage_execute.c
+                    stage_memory.h
+                    stage_memory.c
+                    stage_writeback.h
+                    stage_writeback.c
+                    global_variables.h
+                    unit_tests.c
+
+riscv_sim_pipeline_framework.c  provided file that runs the pipelined 
+                                simulator and contains memory read/write,
+                                register read/write, and program counter
+                                read/write functions
+riscv_pipeline_registers.h  provided file that allows for straightforward
+                            stage register access
+stage_fetch.c   handles the fetch stage for a single 
+                instruction
+stage_decode.c  handles the decode stage for a single instruction
+stage_execute.c handles the execute stage for a single instruction
+stage_memory.c  handles the memory stage for a single instruction
+stage_writeback.c   handles the writeback stage for a single instruction
+global_variables.h  contains an enum for instruction types
+unit_tests.c    contains unit testing for each stage of the pipeline
+***************************************************************************/
+
+/***************************************************************************
+Notes:  Our code supports RISC-V instructions, specifically the RV32I, 
+        RV64I, RV32M, and RV64M extensions.
+
+        We did not support CSR*, FENCE/FENCE.I, EBREAK, ECALL instructions
+        as requested.
+
+        Stalling, forwarding, and branch prediction (Backwards Taken) 
+        are supported.
+***************************************************************************/
+
+/***************************************************************************
+Sources:    Class textbook (Computer Organization and Design RISC-V Edition)
+            Various helpful class Piazza posts
+            Knowledge gained directly from Professor Miller and TAs through
+            lecture and section
+            The official RISC-V manual:
+            https://www2.eecs.berkeley.edu/Pubs/TechRpts/2014/EECS-2014-54.pdf
+
+***************************************************************************/
+/***************************************************************************
+Testing:    We've implemented unit testing for this programming
+            assignment. The entire test suite can be run with 'sim -u'.
+
+            Optional pipeline stage status messages have been added for
+            each stage.
+
+            We used Professor Miller's online RISC-V assembler to generate
+            test files.
+END************************************************************************/
